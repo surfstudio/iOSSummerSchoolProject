@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		AE563F4C22F9A7E000B93FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE563F4B22F9A7E000B93FCB /* AppDelegate.swift */; };
-		AE563F4E22F9A7E000B93FCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE563F4D22F9A7E000B93FCB /* ViewController.swift */; };
 		AE563F5122F9A7E000B93FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE563F4F22F9A7E000B93FCB /* Main.storyboard */; };
 		AE563F5322F9A7E400B93FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE563F5222F9A7E400B93FCB /* Assets.xcassets */; };
 		AE563F5622F9A7E400B93FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE563F5422F9A7E400B93FCB /* LaunchScreen.storyboard */; };
-		AE563F5E22F9AC6700B93FCB /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE563F5D22F9AC6700B93FCB /* TestClass.swift */; };
+		AEECD36222FC37E200B594C2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECD36122FC37E200B594C2 /* FeedViewController.swift */; };
+		AEECD36422FC3E0F00B594C2 /* FeedTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECD36322FC3E0F00B594C2 /* FeedTestCell.swift */; };
+		AEECD36622FC43F400B594C2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECD36522FC43F400B594C2 /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE563F4822F9A7E000B93FCB /* iOSSummerExampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSSummerExampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE563F4B22F9A7E000B93FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE563F4D22F9A7E000B93FCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE563F5022F9A7E000B93FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE563F5222F9A7E400B93FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE563F5522F9A7E400B93FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE563F5722F9A7E400B93FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE563F5D22F9AC6700B93FCB /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
+		AEECD36122FC37E200B594C2 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		AEECD36322FC3E0F00B594C2 /* FeedTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTestCell.swift; sourceTree = "<group>"; };
+		AEECD36522FC43F400B594C2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		AE563F4A22F9A7E000B93FCB /* iOSSummerExampleProject */ = {
 			isa = PBXGroup;
 			children = (
-				AE563F4B22F9A7E000B93FCB /* AppDelegate.swift */,
-				AE563F4D22F9A7E000B93FCB /* ViewController.swift */,
-				AE563F4F22F9A7E000B93FCB /* Main.storyboard */,
-				AE563F5222F9A7E400B93FCB /* Assets.xcassets */,
-				AE563F5422F9A7E400B93FCB /* LaunchScreen.storyboard */,
-				AE563F5722F9A7E400B93FCB /* Info.plist */,
-				AE563F5D22F9AC6700B93FCB /* TestClass.swift */,
+				AEECD36022FC36FD00B594C2 /* Screens */,
+				AEECD35F22FC36F000B594C2 /* Resources */,
+				AEECD35E22FC36B800B594C2 /* Application */,
 			);
 			path = iOSSummerExampleProject;
+			sourceTree = "<group>";
+		};
+		AEECD35E22FC36B800B594C2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AE563F4B22F9A7E000B93FCB /* AppDelegate.swift */,
+				AE563F5422F9A7E400B93FCB /* LaunchScreen.storyboard */,
+				AE563F5722F9A7E400B93FCB /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AEECD35F22FC36F000B594C2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE563F5222F9A7E400B93FCB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AEECD36022FC36FD00B594C2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AE563F4F22F9A7E000B93FCB /* Main.storyboard */,
+				AEECD36122FC37E200B594C2 /* FeedViewController.swift */,
+				AEECD36322FC3E0F00B594C2 /* FeedTestCell.swift */,
+				AEECD36522FC43F400B594C2 /* PhotoViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE563F4E22F9A7E000B93FCB /* ViewController.swift in Sources */,
-				AE563F5E22F9AC6700B93FCB /* TestClass.swift in Sources */,
+				AEECD36222FC37E200B594C2 /* FeedViewController.swift in Sources */,
+				AEECD36622FC43F400B594C2 /* PhotoViewController.swift in Sources */,
 				AE563F4C22F9A7E000B93FCB /* AppDelegate.swift in Sources */,
+				AEECD36422FC3E0F00B594C2 /* FeedTestCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = iOSSummerExampleProject/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iOSSummerExampleProject/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +330,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = iOSSummerExampleProject/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iOSSummerExampleProject/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
