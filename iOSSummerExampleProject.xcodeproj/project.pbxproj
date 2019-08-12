@@ -20,6 +20,7 @@
 		AEECD36622FC43F400B594C2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECD36522FC43F400B594C2 /* PhotoViewController.swift */; };
 		C14D97A723013A7400F82BC6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D97A623013A7400F82BC6 /* CustomNavigationController.swift */; };
 		C14D97AA23013AA500F82BC6 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D97A923013AA500F82BC6 /* UINavigationController.swift */; };
+		C14D97AC230140A400F82BC6 /* ImageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D97AB230140A400F82BC6 /* ImageTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		AEECD36522FC43F400B594C2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C14D97A623013A7400F82BC6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		C14D97A923013AA500F82BC6 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		C14D97AB230140A400F82BC6 /* ImageTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				AEC3AD1622FD95DF00D86A7C /* FeedHeaderView.swift */,
 				AEC3AD1822FD963600D86A7C /* FeedHeaderView.xib */,
 				AEC3AD1A22FD9AD900D86A7C /* CategoryCell.swift */,
+				C14D97AB230140A400F82BC6 /* ImageTableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				AEC3AD1722FD95DF00D86A7C /* FeedHeaderView.swift in Sources */,
 				AEC3AD1322FD8BF200D86A7C /* FeedHeaderCell.swift in Sources */,
 				AEC3AD1B22FD9AD900D86A7C /* CategoryCell.swift in Sources */,
+				C14D97AC230140A400F82BC6 /* ImageTableCell.swift in Sources */,
 				AEECD36222FC37E200B594C2 /* FeedViewController.swift in Sources */,
 				C14D97A723013A7400F82BC6 /* CustomNavigationController.swift in Sources */,
 				AEECD36622FC43F400B594C2 /* PhotoViewController.swift in Sources */,

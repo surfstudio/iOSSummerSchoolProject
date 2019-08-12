@@ -10,21 +10,42 @@ import UIKit
 
 enum FeedSegue: String {
     case photo = "showDetails"
+    case collection = "showCollection"
 }
 
 class FeedViewController: UIViewController {
+
+    // MARK: - Nested types
+
+    private enum Constants {
+        static let headerHeight: CGFloat = 250
+        static let navBarHiddenBreakpoint: CGFloat = 200
+    }
     
     private enum Sections: Int {
         case headerCell
         case categoriesCell
+        case photosCell
     }
     
     @IBOutlet weak var tableView: UITableView!
 
+    var isStatusBarLight: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Hello World"
         configureTableView()
+        navigationController?.designTransparent()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let offset = tableView.contentOffset.y
+        navigationController?.setNavigationBarHidden(offset >= Constants.navBarHiddenBreakpoint, animated: false)
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return isStatusBarLight ? .lightContent : .default
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,8 +54,9 @@ class FeedViewController: UIViewController {
         }
         switch feedSegue {
         case .photo:
-            let vc = segue.destination as? PhotoViewController
-            vc?.indexPath = tableView.indexPathForSelectedRow
+            break
+        case .collection:
+            break
         }
     }
 
@@ -44,12 +66,23 @@ class FeedViewController: UIViewController {
         tableView.register(UINib(nibName: "FeedHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "FeedHeaderView")
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? FeedHeaderCell {
+            cell.handleScroll(offset: offset)
+        }
+        isStatusBarLight = offset < Constants.headerHeight
+        setNeedsStatusBarAppearanceUpdate()
+
+        navigationController?.setNavigationBarHidden(offset >= Constants.navBarHiddenBreakpoint, animated: true)
+    }
+
 }
 
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,6 +92,8 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         switch sectionType {
         case .headerCell, .categoriesCell:
             return 1
+        case .photosCell:
+            return 10
         }
     }
     
@@ -77,6 +112,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             return cell
+        case .photosCell:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as? ImageTableCell else {
+                return UITableViewCell()
+            }
+            return cell
         }
     }
 
@@ -89,6 +129,8 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
             return 250.0
         case .categoriesCell:
             return 138.0
+        case .photosCell:
+            return 250.0
         }
     }
 
@@ -103,6 +145,12 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
             }
             view.configure(title: "Explore")
             return view
+        case .photosCell:
+            guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "FeedHeaderView") as? FeedHeaderView else {
+                return nil
+            }
+            view.configure(title: "New")
+            return view
         default:
             return nil
         }
@@ -115,7 +163,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         switch sectionType {
         case .headerCell:
             return 0.0
-        case .categoriesCell:
+        case .categoriesCell, .photosCell:
             return 66.0
         }
     }

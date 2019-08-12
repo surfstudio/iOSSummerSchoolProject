@@ -9,6 +9,12 @@
 import UIKit
 
 class FeedHeaderCell: UITableViewCell {
+
+    // MARK: - Constants
+
+    private enum Constants {
+        static let height: CGFloat = 250
+    }
     
     // MARK: - IBOutlets
     
@@ -16,6 +22,8 @@ class FeedHeaderCell: UITableViewCell {
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     // MARK: - UITableViewCell
     
@@ -23,9 +31,15 @@ class FeedHeaderCell: UITableViewCell {
         super.awakeFromNib()
         configureHeaderImage()
         configureLabels()
+        selectionStyle = .none
     }
     
     // MARK: - Configuration
+
+    func handleScroll(offset: CGFloat) {
+        clipsToBounds = offset >= 0
+        heightConstraint.constant = Constants.height - offset
+    }
     
     func configureHeaderImage() {
         headerImageView.contentMode = .scaleAspectFill

@@ -10,13 +10,41 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
-    @IBOutlet weak var photoLabel: UILabel!
-    
-    var indexPath: IndexPath?
-    
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var infoWrapView: UIView!
+    @IBOutlet weak var imageViewWrapView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        photoLabel.text = "IndexPath: row:\(indexPath?.row ?? 0) selection: \(indexPath?.section ?? 0)"
+        navigationController?.designDark()
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "close"),
+            style: .plain,
+            target: self,
+            action: #selector(closeClicked)
+        )
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "share"),
+            style: .plain,
+            target: self,
+            action: #selector(shareClicked)
+        )
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    @objc
+    private func closeClicked() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    @objc
+    private func shareClicked() {
+        // share
     }
 
 }
