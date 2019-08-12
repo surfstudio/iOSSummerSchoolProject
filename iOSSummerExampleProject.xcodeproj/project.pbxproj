@@ -18,6 +18,8 @@
 		AEC3AD1B22FD9AD900D86A7C /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC3AD1A22FD9AD900D86A7C /* CategoryCell.swift */; };
 		AEECD36222FC37E200B594C2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECD36122FC37E200B594C2 /* FeedViewController.swift */; };
 		AEECD36622FC43F400B594C2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEECD36522FC43F400B594C2 /* PhotoViewController.swift */; };
+		C14D97A723013A7400F82BC6 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D97A623013A7400F82BC6 /* CustomNavigationController.swift */; };
+		C14D97AA23013AA500F82BC6 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D97A923013AA500F82BC6 /* UINavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		AEC3AD1A22FD9AD900D86A7C /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		AEECD36122FC37E200B594C2 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		AEECD36522FC43F400B594C2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		C14D97A623013A7400F82BC6 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		C14D97A923013AA500F82BC6 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		AE563F4A22F9A7E000B93FCB /* iOSSummerExampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				C14D97A423013A4E00F82BC6 /* Library */,
 				AEECD36022FC36FD00B594C2 /* Screens */,
 				AEECD35F22FC36F000B594C2 /* Resources */,
 				AEECD35E22FC36B800B594C2 /* Application */,
@@ -120,6 +125,31 @@
 				AEECD36522FC43F400B594C2 /* PhotoViewController.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		C14D97A423013A4E00F82BC6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				C14D97A823013A9700F82BC6 /* Extensions */,
+				C14D97A523013A5700F82BC6 /* Base classes */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		C14D97A523013A5700F82BC6 /* Base classes */ = {
+			isa = PBXGroup;
+			children = (
+				C14D97A623013A7400F82BC6 /* CustomNavigationController.swift */,
+			);
+			path = "Base classes";
+			sourceTree = "<group>";
+		};
+		C14D97A823013A9700F82BC6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C14D97A923013AA500F82BC6 /* UINavigationController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +229,9 @@
 				AEC3AD1322FD8BF200D86A7C /* FeedHeaderCell.swift in Sources */,
 				AEC3AD1B22FD9AD900D86A7C /* CategoryCell.swift in Sources */,
 				AEECD36222FC37E200B594C2 /* FeedViewController.swift in Sources */,
+				C14D97A723013A7400F82BC6 /* CustomNavigationController.swift in Sources */,
 				AEECD36622FC43F400B594C2 /* PhotoViewController.swift in Sources */,
+				C14D97AA23013AA500F82BC6 /* UINavigationController.swift in Sources */,
 				AE563F4C22F9A7E000B93FCB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
