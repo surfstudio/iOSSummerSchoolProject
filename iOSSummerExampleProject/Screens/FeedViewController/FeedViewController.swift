@@ -31,11 +31,14 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var isStatusBarLight: Bool = true
+    
+    var collections: [CollectionEntry] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         navigationController?.designTransparent()
+        loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -76,6 +79,21 @@ class FeedViewController: UIViewController {
 
         navigationController?.setNavigationBarHidden(offset >= Constants.navBarHiddenBreakpoint, animated: true)
     }
+    
+    func loadData() {
+        let service = BaseService()
+        service.getFeaturedCollections(
+            onCompleted: { (collections) in
+                DispatchQueue.main.async {
+                    self.collections = collections
+                    self.tableView.reloadData()
+                }
+            },
+            onError: { (error) in
+                print("error: \(error)")
+            }
+        )
+    }
 
 }
 
@@ -111,6 +129,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCategoriesCell", for: indexPath) as? FeedCategoriesCell else {
                 return UITableViewCell()
             }
+            cell.configure(collections: collections)
             return cell
         case .photosCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as? ImageTableCell else {

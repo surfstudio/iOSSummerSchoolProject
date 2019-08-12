@@ -11,6 +11,12 @@
 		AE563F5122F9A7E000B93FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE563F4F22F9A7E000B93FCB /* Main.storyboard */; };
 		AE563F5322F9A7E400B93FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE563F5222F9A7E400B93FCB /* Assets.xcassets */; };
 		AE563F5622F9A7E400B93FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE563F5422F9A7E400B93FCB /* LaunchScreen.storyboard */; };
+		AE637520230171C4005917A2 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63751F230171C4005917A2 /* NetworkConstants.swift */; };
+		AE63752323017324005917A2 /* PhotoEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63752223017324005917A2 /* PhotoEntry.swift */; };
+		AE637526230173D9005917A2 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE637525230173D9005917A2 /* BaseService.swift */; };
+		AE63752823017964005917A2 /* CollectionEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63752723017964005917A2 /* CollectionEntry.swift */; };
+		AE63752A23017EEF005917A2 /* UrlsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63752923017EEF005917A2 /* UrlsEntry.swift */; };
+		AE63752C23017F9A005917A2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63752B23017F9A005917A2 /* UIImageView.swift */; };
 		AEC3AD1322FD8BF200D86A7C /* FeedHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC3AD1222FD8BF200D86A7C /* FeedHeaderCell.swift */; };
 		AEC3AD1522FD938000D86A7C /* FeedCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC3AD1422FD938000D86A7C /* FeedCategoriesCell.swift */; };
 		AEC3AD1722FD95DF00D86A7C /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC3AD1622FD95DF00D86A7C /* FeedHeaderView.swift */; };
@@ -30,6 +36,12 @@
 		AE563F5222F9A7E400B93FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE563F5522F9A7E400B93FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE563F5722F9A7E400B93FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE63751F230171C4005917A2 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		AE63752223017324005917A2 /* PhotoEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEntry.swift; sourceTree = "<group>"; };
+		AE637525230173D9005917A2 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		AE63752723017964005917A2 /* CollectionEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionEntry.swift; sourceTree = "<group>"; };
+		AE63752923017EEF005917A2 /* UrlsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlsEntry.swift; sourceTree = "<group>"; };
+		AE63752B23017F9A005917A2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		AEC3AD1222FD8BF200D86A7C /* FeedHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderCell.swift; sourceTree = "<group>"; };
 		AEC3AD1422FD938000D86A7C /* FeedCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCategoriesCell.swift; sourceTree = "<group>"; };
 		AEC3AD1622FD95DF00D86A7C /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
@@ -72,12 +84,32 @@
 		AE563F4A22F9A7E000B93FCB /* iOSSummerExampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				AE637524230173C5005917A2 /* Services */,
+				AE6375212301730C005917A2 /* Models */,
 				C14D97A423013A4E00F82BC6 /* Library */,
 				AEECD36022FC36FD00B594C2 /* Screens */,
 				AEECD35F22FC36F000B594C2 /* Resources */,
 				AEECD35E22FC36B800B594C2 /* Application */,
 			);
 			path = iOSSummerExampleProject;
+			sourceTree = "<group>";
+		};
+		AE6375212301730C005917A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE63752223017324005917A2 /* PhotoEntry.swift */,
+				AE63752723017964005917A2 /* CollectionEntry.swift */,
+				AE63752923017EEF005917A2 /* UrlsEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AE637524230173C5005917A2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AE637525230173D9005917A2 /* BaseService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		AEC3AD1022FD8B9700D86A7C /* FeedViewController */ = {
@@ -116,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				AE563F5222F9A7E400B93FCB /* Assets.xcassets */,
+				AE63751F230171C4005917A2 /* NetworkConstants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -151,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				C14D97A923013AA500F82BC6 /* UINavigationController.swift */,
+				AE63752B23017F9A005917A2 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,12 +263,18 @@
 			files = (
 				AEC3AD1522FD938000D86A7C /* FeedCategoriesCell.swift in Sources */,
 				AEC3AD1722FD95DF00D86A7C /* FeedHeaderView.swift in Sources */,
+				AE637520230171C4005917A2 /* NetworkConstants.swift in Sources */,
+				AE63752323017324005917A2 /* PhotoEntry.swift in Sources */,
+				AE63752823017964005917A2 /* CollectionEntry.swift in Sources */,
 				AEC3AD1322FD8BF200D86A7C /* FeedHeaderCell.swift in Sources */,
 				AEC3AD1B22FD9AD900D86A7C /* CategoryCell.swift in Sources */,
 				C14D97AC230140A400F82BC6 /* ImageTableCell.swift in Sources */,
+				AE63752C23017F9A005917A2 /* UIImageView.swift in Sources */,
+				AE637526230173D9005917A2 /* BaseService.swift in Sources */,
 				AEECD36222FC37E200B594C2 /* FeedViewController.swift in Sources */,
 				C14D97A723013A7400F82BC6 /* CustomNavigationController.swift in Sources */,
 				AEECD36622FC43F400B594C2 /* PhotoViewController.swift in Sources */,
+				AE63752A23017EEF005917A2 /* UrlsEntry.swift in Sources */,
 				C14D97AA23013AA500F82BC6 /* UINavigationController.swift in Sources */,
 				AE563F4C22F9A7E000B93FCB /* AppDelegate.swift in Sources */,
 			);
