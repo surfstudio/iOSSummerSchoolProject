@@ -1,3 +1,3 @@
 # iOSSummerSchoolProject
 
-## Привет всем, мы пробуем создать readme
+![Demo](./img/app-example.gif)
