@@ -32,7 +32,10 @@ class FeedViewController: UIViewController {
 
     var isStatusBarLight: Bool = true
     
-    var collections: [CollectionEntry] = []
+    var collections: [Collection] = []
+    var photos: [PhotoEntry] = []
+    
+    let context = CoreDataStack.shared.persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,18 +84,30 @@ class FeedViewController: UIViewController {
     }
     
     func loadData() {
-        let service = BaseService()
-        service.getFeaturedCollections(
+        let provider = DataProvider(
+            service: BaseService(),
+            context: context
+        )
+        provider.getCollections(
             onCompleted: { (collections) in
-                DispatchQueue.main.async {
-                    self.collections = collections
-                    self.tableView.reloadData()
-                }
+                self.collections = collections
+                self.tableView.reloadData()
             },
             onError: { (error) in
                 print("error: \(error)")
             }
         )
+    }
+    
+    private func handleError(error: Error) {
+        if let error = error as? LocalizedError {
+            handleError(message: error.localizedDescription)
+        }
+    }
+    
+    private func handleError(message: String) {
+        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        present(alertController, animated: true, completion: nil)
     }
 
 }

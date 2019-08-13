@@ -12,7 +12,7 @@ class FeedCategoriesCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var collections: [CollectionEntry] = []
+    var collections: [Collection] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class FeedCategoriesCell: UITableViewCell {
         collectionView.dataSource = self        
     }
     
-    func configure(collections: [CollectionEntry]) {
+    func configure(collections: [Collection]) {
         self.collections = collections
         collectionView.reloadData()
     }
@@ -46,7 +46,10 @@ extension FeedCategoriesCell: UICollectionViewDataSource, UICollectionViewDelega
         }
         let currentCollection = collections[indexPath.row]
         cell.titleLabel.text = currentCollection.title
-        cell.backgroundImage.loadImage(by: currentCollection.cover_photo.urls.regular)
+        if let url = currentCollection.photo?.urlString {
+            cell.backgroundImage.image = nil
+            cell.backgroundImage.loadImage(by: url)
+        }
         return cell
     }
 

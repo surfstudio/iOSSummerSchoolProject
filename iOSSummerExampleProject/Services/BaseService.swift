@@ -27,6 +27,7 @@ struct BaseService {
                 let photos = try? JSONDecoder().decode([PhotoEntry].self, from: data)
             else {
                 print("undable decode data")
+                onError(NSError())
                 return
             }
             
@@ -53,6 +54,7 @@ struct BaseService {
                 let collections = try? JSONDecoder().decode([CollectionEntry].self, from: data)
             else {
                 print("undable decode")
+                onError(NSError())
                 return
             }
             
